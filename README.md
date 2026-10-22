@@ -1,216 +1,150 @@
-# Fltr Fivemleaktr
+<div align="center">
 
-Fltr / Fivemleaktr branded edition, based on [tlk-rpf](https://github.com/Talkdedsec/tlk-rpf) by Talkdedsec. Existing website and release links point to the upstream project, not Fltr downloads. Licensed under GPL-3.0-only.
+<img src="src-tauri/icons/128x128@2x.png" alt="FLTR logosu" width="112" height="112">
 
-> A Windows editor for the `.rpf` packages in the FiveM `mods` folder: change textures, visual settings, particle effects, map tiles and UI graphics without OpenIV, with a backup before every save and undo for every change.
+# FLTR FiveM RPF Editor & Creator
 
-[![Status](https://img.shields.io/badge/status-active-2ea44f)](#)
-[![Release](https://img.shields.io/github/v/release/Talkdedsec/tlk-rpf?label=release)](https://github.com/Talkdedsec/tlk-rpf/releases/latest)
-[![CI](https://github.com/Talkdedsec/tlk-rpf/actions/workflows/ci.yml/badge.svg)](https://github.com/Talkdedsec/tlk-rpf/actions/workflows/ci.yml)
-[![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-0078d4)](#compatibility)
-[![License](https://img.shields.io/badge/license-GPL--3.0-blue)](LICENSE)
+**Fivemleaktr · FiveM mod paketlerini oluştur, incele ve düzenle.**
 
-[Website](https://talkdedsec.github.io/tlk-rpf/) Â· [Download](https://github.com/Talkdedsec/tlk-rpf/releases/latest) Â· [TÃ¼rkÃ§e](README.tr.md) Â· [Changelog](CHANGELOG.md) Â· [Report a problem](https://github.com/Talkdedsec/tlk-rpf/issues/new/choose)
+Windows için Türkçe arayüzlü RPF düzenleyici. Dokular, görsel ayarlar, efektler, modeller ve harita araçları tek uygulamada.
 
-![Overview of a graphics mod with detected presets](docs/ekran/ozet-hazir-ayarlar.png)
+[![CI](https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/actions/workflows/ci.yml/badge.svg)](https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/actions/workflows/ci.yml)
+![Platform](https://img.shields.io/badge/platform-Windows%2010%20%2F%2011%20x64-0078D4)
+![Arayüz](https://img.shields.io/badge/aray%C3%BCz-T%C3%BCrk%C3%A7e-E5243B)
+[![Lisans](https://img.shields.io/badge/lisans-GPL--3.0--only-blue)](LICENSE)
 
-## Contents
+[Sürümler](https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/releases) · [Hata bildir](https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/issues) · [Katkıda bulun](CONTRIBUTING.md)
 
-- [What it is](#what-it-is)
-- [Why it exists](#why-it-exists)
-- [What you get](#what-you-get)
-- [Quick start](#quick-start)
-- [Trust and privacy](#trust-and-privacy)
-- [Compatibility](#compatibility)
-- [How it works](#how-it-works)
-- [Known limitations](#known-limitations)
-- [Release information](#release-information)
-- [Project map](#project-map)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [License](#license)
+</div>
 
-## What it is
+## Proje hakkında
 
-FiveM loads client-side mods from `%LOCALAPPDATA%\FiveM\FiveM.app\mods`. Each mod is an `.rpf` archive with an `assembly.xml` that says which game file it replaces. fltr-rpf opens those archives, recognises what is inside and gives each file type its own editor: a texture grid for `.ytd`, grouped sliders for `visualsettings.dat`, a 3D view for models, a layer editor for the pause-menu map, a keyframe editor for particle effects. The interface is in Turkish.
+FLTR FiveM RPF Editor & Creator, FiveM `mods` klasöründeki `.rpf` paketleri üzerinde çalışır. Mevcut bir paketi açabilir, içeriğini düzenleyebilir veya yeni bir mod paketi oluşturup `assembly.xml` eşlemelerini hazırlayabilirsin.
 
-## Why it exists
+Uygulama içindeki ürün adı **Fltr Fivemleaktr**, teknik paket adı **fltr-rpf** olarak kullanılır.
 
-OpenIV can edit these files, but every change goes through export, an external image editor, import and manual repacking, and nothing tells you whether FiveM will actually load the result. fltr-rpf keeps the whole loop inside one window and checks the package the way FiveM reads it.
+## Özellikler
 
-| It does | It does not |
-| --- | --- |
-| Edit OPEN and CFXP archives, the formats FiveM's mods loader accepts | Open NG or AES encrypted archives (the keys are not bundled) |
-| Replace, recolour, rename and resize textures, including textures embedded in models and particle dictionaries | Author new 3D models or import meshes |
-| Warn about mods FiveM will silently ignore and repair broken `assembly.xml` mappings | Modify the base game or FiveM itself |
-| Keep a backup before every write and refuse to write while FiveM has the file open | Guarantee how a change looks in game; that still needs a test in FiveM |
+- **RPF ve mod yönetimi:** Paket oluşturma, dosya ekleme ve çıkarma, modları açma/kapatma, paket eşlemeleri ve çakışma karşılaştırması.
+- **Doku düzenleme:** `.ytd` dokularını görüntüleme, değiştirme, renklendirme, yeniden adlandırma ve boyutlandırma; PNG/DDS dışa aktarma ve toplu içe aktarma.
+- **Gömülü dokular:** `.ydr`, `.ydd`, `.yft` ve `.ypt` içindeki dokuları düzenleme ve boyutlandırma.
+- **Görsel ayarlar:** `visualsettings.dat` için gruplanmış ayarlar, renk araçları ve hazır ayarlar.
+- **Parçacık efektleri:** `.ypt` efektlerinde renk, boyut, ışık ve yoğunluk düzenleme.
+- **3B önizleme:** Modelleri ve `.ybn` çarpışma dosyalarını inceleme, dokularıyla OBJ dışa aktarma.
+- **ESC ve radar haritası:** Harita üzerine logo, görsel ve yazı yerleştirme; katmanları döndürme ve ölçekleme.
+- **Arayüz ve meta dosyaları:** `.gfx` içindeki görselleri düzenleme; desteklenen meta dosyalarını XML üzerinden değiştirme.
+- **Yedekleme ve geri alma:** Mod kaydından önce yedek, düzenlemelerde geri al/yinele ve önceki yedeği geri yükleme.
+- **İsteğe bağlı AI yardımcısı:** Claude, OpenAI, Gemini, Groq, OpenRouter, Ollama ve özel OpenAI uyumlu sağlayıcılar.
 
-## What you get
+## Çalıştırma
 
-- **Mods manager.** Enable and disable mods, see conflicts between mods that replace the same game file, compare the conflicting copies (identical, different settings, different textures, different lines) and switch one off. Mods that FiveM will not load are flagged with the reason.
-- **Texture editor.** Replace from PNG, JPG, WEBP, TGA or DDS, recolour (hue, saturation, brightness, contrast, tint), rename, add, delete and resize. Export a whole dictionary to a folder and re-import every file whose name matches. DXT1/3/5, BC4/5/7 and uncompressed formats with the game's own mip layout.
-- **Embedded textures.** Textures inside `.ydr`, `.ydd`, `.yft` and `.ypt` are edited in place and can be resized; the resource page map is rewritten so the game still finds them.
-- **Visual settings.** `visualsettings.dat` grouped by topic with colour pickers and presets for damage overlay, kill effect, coronas, vehicle lights, distant lights, sky, rain and more. Line order, comments and duplicate keys are preserved.
-- **Particle effects (`.ypt`).** Every effect, emitter and particle rule with its colour, size, light and spawn-rate keyframes. Search (`blood`, `muz_pistol`) and apply hue shift, tint, size, light and density changes to all results in one undoable step.
-- **3D view.** Models and collision meshes (`.ybn`) in 3D. Click a part to select its texture; edits show up immediately. Export to OBJ with textures. Model gallery with empty-model detection for optimisation packs.
-- **Pause map and radar editor.** Place photos, logos and text on the ESC map by game coordinates, rotate and scale them, bake them into the tiles and undo the bake to get the layers back. Only the tiles a layer touches are re-encoded.
-- **Scaleform UI (`.gfx`).** View, replace and export the images embedded in HUD and minimap files, and see which game textures the UI pulls in.
-- **Meta files.** `.ymt`, `.ymap`, `.ytyp` shown as XML and written back to binary after editing.
-- **AI assistant (optional).** Describe the change ("make the blood green", "write the server name on Legion Square") and it uses the same tools. Works with Claude, OpenAI, Gemini, Groq, OpenRouter, Ollama or any OpenAI-compatible endpoint you configure.
-- **Quality of life.** Ctrl+P command palette, recent files, content search across textures, settings and text, undo and redo for every operation, new mod packages from scratch and one-click install into the mods folder.
+Bu depoya henüz FLTR adına hazır bir EXE sürümü eklenmedi. Şimdilik aşağıdaki adımlarla kaynak koddan çalıştırabilirsin. Yayınlanan paketler bu deponun [Sürümler](https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/releases) sayfasında yer alır.
 
-| | |
-| --- | --- |
-| ![Pause map editor](docs/ekran/harita-duzenleyici.png) | ![3D view with texture panel](docs/ekran/3b-doku-paneli.png) |
-| ![Particle effect editor](docs/ekran/ypt-efekt-ayarlari.png) | ![Scaleform UI images](docs/ekran/gfx-arayuz.png) |
-| ![Model gallery](docs/ekran/model-galerisi.png) | ![Conflict comparison](docs/ekran/cakisma.png) |
+### Gerekenler
 
-## Quick start
+- Windows 10 veya Windows 11, x64.
+- Git.
+- Node.js 22.12 veya üzeri ve npm.
+- Güncel kararlı Rust araç zinciri; Windows için MSVC hedefi.
+- Visual Studio Build Tools: **Desktop development with C++** iş yükü ve Windows SDK.
+- Microsoft Edge WebView2 Runtime.
 
-### Install
+### İndir ve başlat
 
-1. Download `tlk-rpf_<version>_x64-setup.exe` from the [latest release](https://github.com/Talkdedsec/tlk-rpf/releases/latest). A portable `tlk-rpf.exe` is attached as well.
-2. Check the file against `SHA256SUMS.txt` (see [Release information](#release-information)).
-3. Run the installer. It installs for the current user only and needs no administrator rights. The binary is not code-signed, so SmartScreen may ask for confirmation.
+PowerShell'de komutları sırayla çalıştır:
 
-### Run
-
-1. Start fltr-rpf. It finds the FiveM mods folder automatically; the pencil icon next to *Mods klasÃ¶rÃ¼* picks another folder.
-2. Click a mod on the left. The overview shows problems first, then presets, textures, models and the package mapping.
-3. Edit, then press **Ctrl+S**. The previous file goes to the backup folder first. Close FiveM before saving; fltr-rpf refuses to overwrite a file the game has open.
-
-| Shortcut | Action |
-| --- | --- |
-| Ctrl+P | Command palette: files, mods, tabs, actions |
-| Ctrl+S / Ctrl+Shift+S | Save / save as |
-| Ctrl+Z / Ctrl+Y | Undo / redo |
-| Ctrl+K | AI assistant |
-| Ctrl+O | Open an `.rpf` |
-| F2 | Rename the selected file |
-
-### Build from source
-
-Requirements: Windows 10/11 x64, Rust 1.88 or newer (edition 2024), Node.js 22 or newer, and the WebView2 runtime.
-
-```text
-git clone https://github.com/Talkdedsec/tlk-rpf.git
-cd tlk-rpf
+```powershell
+git clone https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator.git
+cd FLTR-Fivem-Rpf-Editor-Creator
 npm ci
-npm run tauri build          # installer in target/release/bundle/nsis/
-npm run tauri dev            # development build with hot reload
-cargo test -p fltr-rpf-core   # core tests
-cargo run -p fltr-rpf-core --example kirici   # feeds truncated and corrupted files to every parser
+npm run tauri dev
 ```
 
-Tests that need real mod files look for `testdata/*.rpf`. Those files are not in the repository; copy a few mods from your own mods folder there to run the full suite. Without them the file-based tests are skipped and the rest still run.
+İlk açılışta bağımlılıklar indirilir ve Rust kodu derlenir; internet bağlantısı gerekir ve işlem zaman alabilir. Derleme tamamlanınca masaüstü uygulaması açılır.
 
-## Trust and privacy
+Yalnızca arayüzü tarayıcıda incelemek için `npm run dev` çalıştırıp `http://localhost:1420` adresini açabilirsin. Dosya işlemleri ve diğer masaüstü özellikleri için Tauri uygulaması gerekir.
 
-- **Network.** Nothing leaves the machine unless you configure an AI provider. Then only your request and the file excerpts the assistant reads go to that provider. Requests to non-Anthropic providers are sent from the Rust side and are limited to `https://` and `localhost` addresses. There is no telemetry and no update check.
-- **Local state.** Settings: `%APPDATA%\com.talkdedsec.tlkrpf\ayarlar.json`. AI keys are kept in Windows Credential Manager (entries named `tlk-rpf`), not in that file; keys saved in plain text by 1.0.0 move there the first time 1.1.0 starts. Backups: `%APPDATA%\com.talkdedsec.tlkrpf\yedek\`, the last 20 per file. Each backup records the full path it came from, so two mods with the same file name (every dlcpack has a `dlc.rpf`) keep separate backups and are restored to the right place. Temporary map layer images: `%LOCALAPPDATA%\com.talkdedsec.tlkrpf\`.
-- **Writes.** Every save writes to a temporary file, re-reads it as an archive, backs up the original and then replaces it atomically. Encrypted archives are never written.
-- **Permissions.** Runs as the current user. The installer does not need administrator rights.
-- **Security reports.** See [SECURITY.md](SECURITY.md).
+### EXE ve kurulum paketi oluştur
 
-## Compatibility
+```powershell
+npm run tauri build
+```
 
-| Environment | Support |
-| --- | --- |
-| Windows 11 x64 | Supported, tested |
-| Windows 10 x64 | Supported (needs the WebView2 runtime) |
-| macOS, Linux | Not supported |
-| RPF7 `OPEN`, `CFXP` | Read and write |
-| RPF7 `NG`, `AES` | Detected and reported, not opened |
-| `.ytd` | Full: view, replace, recolour, rename, add, delete, resize, PNG/DDS export |
-| `.ydr` `.ydd` `.yft` | 3D view, embedded texture editing and resizing, OBJ export |
-| `.ypt` | Effect, emitter and particle keyframes; embedded textures |
-| `.gfx` | Embedded images: view, replace, export |
-| `.ybn` | 3D view by surface material |
-| `.ymap` | Entity placement in 3D (read-only), XML editing |
-| `.ymt` `.ytyp` `.ymf` | XML editing with binary write-back |
-| `visualsettings.dat` | Grouped editor, colours, presets |
-| `.xml` `.meta` `.dat` `.txt` `.lua` | Text editor |
-| `.awc` `.ycd` `.gxt2` | Shown as binary |
+- Kurulumsuz uygulama: `target/release/fltr-rpf.exe`
+- Windows kurulum paketi: `target/release/bundle/nsis/`
 
-## How it works
+## İlk kullanım
 
-| Area | Location | Responsibility |
-| --- | --- | --- |
-| Archive | `core/src/rpf.rs` | RPF7 table, lazy file data, rebuild with 512-byte alignment, resources over 16 MB |
-| Resources | `core/src/rsc.rs` | RSC7 pages and flags, pointer resolution, section growth with page map update |
-| Textures | `core/src/ytd.rs`, `core/src/doku.rs` | Texture dictionaries in `.ytd` and inside models and effects, the game's mip layout, BC encoding |
-| Effects | `core/src/ypt.rs` | Particle rule, emitter and effect keyframes |
-| UI files | `core/src/gfx.rs` | Scaleform/SWF tags and bitmaps |
-| Map | `core/src/harita.rs` | Minimap tile layout and layer compositing |
-| Packages | `core/src/oiv.rs`, `core/src/modlar.rs` | `assembly.xml`, mods folder scan, conflicts, backups |
-| Settings | `core/src/vs.rs` | Line-preserving `visualsettings.dat` parser |
-| Models and meta | `core/src/model.rs` | Model and collision meshes for 3D, meta/PSO XML (via rage-formats) |
-| App shell | `src-tauri/src/lib.rs` | Commands, undo history, `tlk://` protocol for previews |
-| Interface | `src/` | React editors, 3D (three.js), AI assistant |
+1. FiveM'i kapat ve düzenleyeceğin modların ayrı bir kopyasını sakla.
+2. Uygulamayı aç. Mods klasörü otomatik bulunmazsa klasör seçme düğmesiyle konumunu belirt.
+3. Soldaki listeden bir mod seç veya **RPF aç** ile paket aç. Yeni paket için **Yeni mod** düğmesini kullan.
+4. Dokuları, ayarları, efektleri veya paket içeriğini düzenle.
+5. **Ctrl+S** ile kaydet. Sonucu FiveM içinde ayrıca kontrol et.
 
-Texture edits never re-layout a resource. Same-size replacements are written in place; a resize appends the new pixel data to the graphics section, which is merged into a single page so no existing structure crosses a page boundary, and the page counts in the resource's page map are updated.
-
-## Known limitations
-
-- **No in-game verification yet.** Saved archives, resized embedded textures, effect values and UI images are verified at the file level and with an independent parser (rage-formats), not inside FiveM. Test a change in game before relying on it.
-- **Encrypted archives.** NG-encrypted inner archives (for example weapon sound packs using `RESIDENT.rpf`) cannot be opened, so audio mods are out of reach for now.
-- **Audio.** `.awc` files are not decoded.
-- **Embedded dictionaries.** Textures inside models and `.ypt` files can be replaced and resized but not added or removed.
-- **Maps.** `.ymap` entities are shown in 3D but moved or removed only through XML.
-- **Memory.** An opened archive is read into memory in full. Very large map packs (1â€“2 GB) need that much RAM.
-- **Large resources.** Resources over 32 MB are recompressed at the default level for speed; such files grow by about 8 %.
-- **Unsigned binary.** Windows SmartScreen may warn on first run.
-- **Language.** The interface is Turkish only.
-
-## Release information
-
-| Item | Where to verify |
-| --- | --- |
-| Version | [Releases](https://github.com/Talkdedsec/tlk-rpf/releases) and `src-tauri/tauri.conf.json` |
-| Changes | [CHANGELOG.md](CHANGELOG.md) |
-| Integrity | `SHA256SUMS.txt` attached to each release; check with `Get-FileHash .\tlk-rpf_1.2.0_x64-setup.exe -Algorithm SHA256` |
-| Source | The release tag, for example `v1.2.0` |
-| Build | Built locally with the commands under [Build from source](#build-from-source); CI builds every tag with the same commands |
-
-## Project map
+Varsayılan FiveM mods konumu:
 
 ```text
-fltr-rpf/
-â”œâ”€â”€ core/                 Rust library: formats and editing
-â”‚   â”œâ”€â”€ src/
-â”‚   â”œâ”€â”€ tests/            integration tests (real files from testdata/)
-â”‚   â””â”€â”€ examples/         diagnostic and parser-breaking tools
-â”œâ”€â”€ src-tauri/            desktop shell, commands, installer config
-â”œâ”€â”€ src/                  React interface
-â”œâ”€â”€ docs/ekran/           screenshots
-â”œâ”€â”€ site/                 project website (GitHub Pages)
-â”œâ”€â”€ testdata/             your own .rpf samples (not committed)
-â””â”€â”€ .github/              CI, release, templates
+%LOCALAPPDATA%\FiveM\FiveM.app\mods
 ```
 
-## Roadmap
+### Kısayollar
 
-- [ ] Error boundary around every editor so a rendering failure never blanks the window
-- [ ] Move the remaining synchronous commands off the UI thread
-- [ ] End-to-end interface tests in the repository
-- [ ] Logo and text layers on any texture, reusing the map layer engine
-- [ ] Empty-model tools for optimisation packs and removal of unused embedded textures
-- [ ] `timecycle_mods` editor and `.gxt2` text labels
-- [ ] Select, move and delete `.ymap` entities in 3D
-- [ ] NG archives and `.awc` audio, once a key source is decided
+- **Ctrl+O:** RPF aç.
+- **Ctrl+S / Ctrl+Shift+S:** Kaydet / farklı kaydet.
+- **Ctrl+Z / Ctrl+Y:** Geri al / yinele.
+- **Ctrl+P:** Komut paleti.
+- **Ctrl+K:** AI yardımcısı.
+- **F2:** Seçili dosyayı yeniden adlandır.
 
-## Support
+## Gizlilik ve bilinen sınırlar
 
-- **Bug:** [open an issue](https://github.com/Talkdedsec/tlk-rpf/issues/new/choose)
-- **Security:** [SECURITY.md](SECURITY.md)
-- **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)
+AI yardımcısı isteğe bağlıdır. Kullanıldığında mesajların ve yardımcının okuduğu mod içeriği seçtiğin sağlayıcıya gönderilebilir. Özel sağlayıcı adresini ve anahtarını yalnızca güvendiğin bir servis için ayarla. Anahtarlar Windows Kimlik Bilgisi Yöneticisi'nde tutulmaya çalışılır; kasa kullanılamazsa ayar dosyasında düz metin kalabilir.
 
-## License
+Mevcut ayar ve yedeklerle uyumluluk için yerel veri dizini `%APPDATA%\com.talkdedsec.tlkrpf\` olarak korunur. Mod kaydı sırasında önceki dosya yedeklenir; her dosya için son 20 yedek tutulur.
+
+- `OPEN` ve `CFXP` RPF arşivleri desteklenir; `NG` ve `AES` şifreli arşivler açılamaz.
+- Yeni mod paketi oluşturulabilir; sıfırdan 3B model üretimi ve mesh içe aktarma desteklenmez.
+- `.awc` ses düzenleme desteklenmez. Model ve efekt içindeki gömülü dokular eklenip silinemez.
+- Büyük arşivler yüksek miktarda RAM kullanabilir. Oyun içindeki sonuç ayrıca test edilmelidir.
+- Güvenilmeyen paketleri dışa aktarmak risk taşır: dışa aktarma yollarının doğrulanmasında bilinen eksikler vardır. Güvenmediğin RPF dosyalarını dışa aktarma.
+
+## Geliştirme
+
+Arayüz **React + TypeScript + Vite**, masaüstü katmanı **Tauri**, arşiv ve dosya işlemleri **Rust** ile yazılmıştır.
+
+- `src/`: Arayüz ve düzenleyiciler.
+- `src-tauri/`: Masaüstü komutları, uygulama ayarları ve simgeler.
+- `core/`: RPF, doku, model, efekt ve diğer dosya biçimleri.
+- `docs/ekran/`: Kaynak projeden kalan referans ekran görüntüleri; FLTR markasına geçiş öncesindeki görünümü gösterebilir.
+- `.github/workflows/`: Kontrol ve sürüm oluşturma iş akışları.
+
+Arayüz derlemesi:
+
+```powershell
+npm run build
+```
+
+Çekirdek testleri ve ayrıştırıcı denemesi:
+
+```powershell
+cargo test -p fltr-rpf-core --locked
+cargo run -p fltr-rpf-core --example kirici
+```
+
+Gerçek mod dosyası kullanan testler `testdata/*.rpf` örneklerini arar. Bu dosyalar depoya dahil değildir; örnekler yoksa ilgili testler atlanır.
+
+## Destek ve katkı
+
+Hata veya özellik isteği için [bu depoda bir issue aç](https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/issues). Hata bildirimine uygulama sürümünü, yaptığın işlemi ve hata mesajını ekle. API anahtarı veya başka gizli bilgi paylaşma.
+
+Değişiklik göndermek için [katkı rehberine](CONTRIBUTING.md), kullanılan bileşenler için [üçüncü taraf bildirimlerine](THIRD_PARTY_NOTICES.md) bakabilirsin. [CHANGELOG.md](CHANGELOG.md), kaynak projeden devralınan sürüm geçmişini içerir.
+
+## Kaynak ve lisans
+
+Bu proje, **Talkdedsec** tarafından geliştirilen [tlk-rpf](https://github.com/Talkdedsec/tlk-rpf) temel alınarak **FLTR / Fivemleaktr** markasına uyarlanmıştır. Orijinal yazar ve telif bildirimleri korunur.
 
 Copyright (c) 2026 Talkdedsec.
 
-fltr-rpf is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License, version 3, as published by the Free Software Foundation. It is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See [LICENSE](LICENSE) for the full text.
+Proje **GPL-3.0-only** lisansı altında sunulur. Lisansın tam metni [LICENSE](LICENSE) dosyasındadır.
 
-In short: you may use, study, change and share it. If you distribute a modified version, you must release its source under the same license. Third-party components and their licenses are listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-
-fltr-rpf is not affiliated with Rockstar Games, Take-Two Interactive or Cfx.re. Grand Theft Auto and FiveM are trademarks of their respective owners.
+FLTR / Fivemleaktr; Rockstar Games, Take-Two Interactive veya Cfx.re ile bağlantılı değildir. Grand Theft Auto ve FiveM adları ilgili sahiplerinin ticari markalarıdır.
