@@ -42,6 +42,16 @@ Harita üzerine sunucu adını, logonu veya görselini yerleştir. Katmanları k
 
 Yeni RPF oluştur, dosyalarını ekle ve `assembly.xml` üzerinden oyun yolu eşlemelerini hazırla. Modelleri 3B görünümde incele, desteklenen modelleri OBJ olarak dışa aktar. Mods listesinde aynı oyun dosyasını değiştiren paketleri karşılaştır.
 
+## Uygulamadan görüntüler
+
+### Doku düzenleyici
+
+![Fivemleaktr doku düzenleyici](docs/ekran/fltr-doku-editoru.png)
+
+### Başlangıç ekranı
+
+![Fivemleaktr başlangıç ekranı](docs/ekran/fltr-baslangic.png)
+
 ## Hemen başla
 
 **Şu an kaynak koddan çalıştırılır.** Hazır FLTR kurulum dosyası yayınlandığında [Sürümler](https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/releases) bölümünde bulunur. ZIP indirmek uygulamayı tek başına çalıştırmaz.
