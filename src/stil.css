@@ -1,16 +1,16 @@
 :root {
-  --zemin: #0d0d0f;
-  --panel: #141417;
-  --panel-2: #1a1a1e;
-  --panel-3: #222227;
-  --cizgi: #26262c;
-  --cizgi-2: #33333a;
-  --metin: #e9e9ec;
-  --soluk: #8b8b95;
-  --cok-soluk: #5c5c66;
-  --vurgu: #e5243b;
-  --vurgu-acik: #ff5a6c;
-  --vurgu-zemin: rgba(229, 36, 59, 0.12);
+  --zemin: #0b111b;
+  --panel: #101a28;
+  --panel-2: #162234;
+  --panel-3: #1d2d42;
+  --cizgi: #24354a;
+  --cizgi-2: #354b65;
+  --metin: #e8f0f8;
+  --soluk: #9aaec3;
+  --cok-soluk: #72869c;
+  --vurgu: #258b99;
+  --vurgu-acik: #36b4c2;
+  --vurgu-zemin: rgba(37, 139, 153, 0.12);
   --yesil: #35c985;
   --sari: #f2a93b;
   --mavi: #4c9dff;
@@ -86,8 +86,8 @@ button {
   padding: 14px 16px 12px;
 }
 .marka img {
-  width: 26px;
-  height: 26px;
+  width: 42px;
+  height: 42px;
 }
 .marka b {
   font-size: 15px;
@@ -272,7 +272,7 @@ button {
   font-weight: 600;
 }
 .dugme.birincil:hover {
-  background: #f03249;
+  background: #1d8190;
 }
 .dugme.hayalet {
   background: transparent;
@@ -291,8 +291,8 @@ button {
   color: var(--vurgu-acik);
 }
 .ikon-dugme {
-  width: 26px;
-  height: 26px;
+  width: 42px;
+  height: 42px;
   display: inline-grid;
   place-items: center;
   border-radius: 6px;
@@ -1295,7 +1295,7 @@ input[type="color"]::-webkit-color-swatch {
 .ai-olay.kullanici {
   align-self: flex-end;
   background: var(--vurgu-zemin);
-  border: 1px solid rgba(229, 36, 59, 0.3);
+  border: 1px solid rgba(37, 139, 153, 0.3);
   padding: 7px 10px;
   border-radius: 10px 10px 2px 10px;
   max-width: 90%;
@@ -1651,8 +1651,8 @@ kbd {
   align-items: center;
   gap: 10px;
   padding: 8px 16px;
-  background: rgba(229, 36, 59, 0.1);
-  border-bottom: 1px solid rgba(229, 36, 59, 0.3);
+  background: rgba(37, 139, 153, 0.1);
+  border-bottom: 1px solid rgba(37, 139, 153, 0.3);
   color: var(--vurgu-acik);
   font-size: 12.5px;
   flex: none;
@@ -1787,7 +1787,7 @@ kbd {
 }
 .harita-karti {
   cursor: pointer;
-  border-color: rgba(229, 36, 59, 0.35);
+  border-color: rgba(37, 139, 153, 0.35);
 }
 .harita-karti:hover {
   background: var(--panel-2);
@@ -1943,3 +1943,9 @@ kbd {
   white-space: pre-wrap;
   word-break: break-all;
 }
+
+.marka { border-bottom: 1px solid var(--cizgi); margin-bottom: 12px; }
+.marka b { font-size: 17px; }
+.fltr-banner { display: block; width: min(100%, 410px); height: auto; margin: 0 auto 30px; }
+.bos-ekran .kutu { border-top: 2px solid var(--vurgu); }
+.dugme:focus-visible { outline: 2px solid var(--vurgu-acik); outline-offset: 3px; }

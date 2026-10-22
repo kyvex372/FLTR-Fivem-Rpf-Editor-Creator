@@ -368,9 +368,9 @@ Yaklaşık ${boyutYaz(kazanc)} ölü alan temizlenir. İçerik değişmez; her d
         <div className="marka">
           <img src="/ikon.svg" alt="" />
           <div>
-            <b>Fltr</b>
+            <b>Fivemleaktr</b>
             <br />
-            <span>Fivemleaktr · RPF düzenleyici</span>
+            <span>RPF Editor & Creator</span>
           </div>
         </div>
         <div className="yan-eylemler">
@@ -524,7 +524,7 @@ Yaklaşık ${boyutYaz(kazanc)} ölü alan temizlenir. İçerik değişmez; her d
         ) : (
           <div className={`bos-ekran${birakmaHedefi !== null ? " hedef" : ""}`}>
             <div className="kutu">
-              <Ikon ad="arsiv" boy={40} renk="var(--vurgu)" />
+              <img className="fltr-banner" src="/banner.svg" alt="Fivemleaktr" />
               <h2>Bir .rpf bırak ya da soldan mod seç</h2>
               <div>
                 Mod açılınca içindeki dosyalara göre düzenleyiciler kendiliğinden gelir: dokular, görsel ayarlar, metin dosyaları ve hazır

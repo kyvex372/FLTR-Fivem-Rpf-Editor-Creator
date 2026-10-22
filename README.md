@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="src-tauri/icons/128x128@2x.png" width="104" height="104" alt="FLTR">
+<img src="public/banner.svg" width="520" alt="Fivemleaktr">
 
 # FLTR • FiveM RPF Editor & Creator
 
