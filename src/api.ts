@@ -296,7 +296,7 @@ export const api = {
     invoke<BelgeOzet>("hedefli_ekle", { id, dosya }),
 };
 
-export const PROTOKOL = navigator.userAgent.includes("Windows") ? "http://tlk.localhost" : "tlk://localhost";
+export const PROTOKOL = navigator.userAgent.includes("Windows") ? "http://fltr.localhost" : "fltr://localhost";
 
 export const yerelGorselUrl = (yol: string) => `${PROTOKOL}/gorsel?${new URLSearchParams({ yol })}`;
 

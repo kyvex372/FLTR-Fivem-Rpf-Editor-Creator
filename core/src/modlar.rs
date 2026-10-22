@@ -416,7 +416,7 @@ pub fn kilit_kontrol(yol: &Path) -> Sonuc<()> {
 
 pub fn guvenli_yaz(hedef: &Path, veri: &[u8]) -> Sonuc<()> {
     kilit_kontrol(hedef)?;
-    let gecici = hedef.with_extension("tlk-yaziliyor");
+    let gecici = hedef.with_extension("fltr-yaziliyor");
     {
         let mut f = File::create(&gecici)?;
         f.write_all(veri)?;

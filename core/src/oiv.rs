@@ -197,14 +197,14 @@ mod testler {
     #[test]
     fn gidis_donus() {
         let x = r#"<?xml version="1.0"?><package version="2.0" target="Five"><metadata><name>Deneme</name>
-            <version><major>1</major><minor>2</minor></version><author><displayName>tlk</displayName></author></metadata>
+            <version><major>1</major><minor>2</minor></version><author><displayName>Fivemleaktr</displayName></author></metadata>
             <content><add source="a.rpf">update\x64\dlcpacks\a\dlc.rpf</add>
             <archive path="update\update.rpf" createIfNotExist="True" type="RPF7">
               <add source="essa\graphics.ytd">\x64\textures\graphics.ytd</add>
               <add source="essa\visualsettings.dat">\common\data\visualsettings.dat</add>
             </archive></content></package>"#;
         let p = coz(x).unwrap();
-        assert_eq!((p.ad.as_str(), p.surum.as_str(), p.yazar.as_str()), ("Deneme", "1.2", "tlk"));
+        assert_eq!((p.ad.as_str(), p.surum.as_str(), p.yazar.as_str()), ("Deneme", "1.2", "Fivemleaktr"));
         assert_eq!(p.hedefler.len(), 3);
         assert_eq!(p.hedefler[1].kaynak, "essa/graphics.ytd");
         assert_eq!(p.hedefler[2].anahtar(), "update\\update.rpf\\common\\data\\visualsettings.dat");

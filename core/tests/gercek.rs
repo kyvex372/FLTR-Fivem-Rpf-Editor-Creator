@@ -196,7 +196,7 @@ fn ytd_yeniden_kurma_ekle_sil_boyutlandir() {
         &veri,
         vec![
             DokuIslemi::Sil("torch".into()),
-            DokuIslemi::Koy { ad: "tlk_logo".into(), rgba: kirmizi.clone(), w: 300, h: 200, bicim: None },
+            DokuIslemi::Koy { ad: "fltr_logo".into(), rgba: kirmizi.clone(), w: 300, h: 200, bicim: None },
             DokuIslemi::Koy { ad: "cloudnoise".into(), rgba: kirmizi, w: 300, h: 200, bicim: None },
         ],
     )
@@ -204,7 +204,7 @@ fn ytd_yeniden_kurma_ekle_sil_boyutlandir() {
     let y = Ytd::coz(&yeni).unwrap();
     assert_eq!(y.dokular.len(), once.dokular.len());
     assert!(!y.dokular.iter().any(|d| d.ad == "torch"));
-    let logo = y.dokular.iter().position(|d| d.ad == "tlk_logo").unwrap();
+    let logo = y.dokular.iter().position(|d| d.ad == "fltr_logo").unwrap();
     let (px, w, h) = y.rgba(logo, 0).unwrap();
     assert_eq!((w, h), (300, 200));
     assert!(px[0] > 240 && px[1] < 16);

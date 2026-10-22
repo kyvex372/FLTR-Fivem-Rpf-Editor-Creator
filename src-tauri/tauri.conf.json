@@ -22,7 +22,7 @@
       }
     ],
     "security": {
-      "csp": "default-src 'self'; img-src 'self' data: blob: http://tlk.localhost tlk:; style-src 'self' 'unsafe-inline'; connect-src 'self' ipc: http://ipc.localhost http://tlk.localhost tlk: https://api.anthropic.com"
+      "csp": "default-src 'self'; img-src 'self' data: blob: http://fltr.localhost fltr:; style-src 'self' 'unsafe-inline'; connect-src 'self' ipc: http://ipc.localhost http://fltr.localhost fltr: https://api.anthropic.com"
     }
   },
   "bundle": {

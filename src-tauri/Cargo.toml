@@ -5,7 +5,7 @@ edition = "2024"
 description = "FiveM mods folder editor: textures, visual settings, effects, models and maps inside .rpf archives"
 authors = ["Talkdedsec", "Fivemleaktr"]
 license = "GPL-3.0-only"
-repository = "https://github.com/Talkdedsec/tlk-rpf"
+repository = "https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator"
 publish = false
 
 [lib]

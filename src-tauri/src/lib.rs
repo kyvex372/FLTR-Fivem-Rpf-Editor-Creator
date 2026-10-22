@@ -1916,7 +1916,7 @@ pub fn calistir() {
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_opener::init())
         .manage(Durum::default())
-        .register_asynchronous_uri_scheme_protocol("tlk", |ctx, istek, yanit| {
+        .register_asynchronous_uri_scheme_protocol("fltr", |ctx, istek, yanit| {
             let app = ctx.app_handle().clone();
             tauri::async_runtime::spawn_blocking(move || {
                 let yol = istek.uri().path().to_string();

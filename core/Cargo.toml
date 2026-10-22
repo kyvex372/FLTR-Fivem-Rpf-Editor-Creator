@@ -5,7 +5,7 @@ edition = "2024"
 description = "RPF7/RSC7 archive and GTA V resource (ytd, ydr, ypt, gfx, meta) reading and in-place editing for fltr-rpf"
 authors = ["Talkdedsec", "Fivemleaktr"]
 license = "GPL-3.0-only"
-repository = "https://github.com/Talkdedsec/tlk-rpf"
+repository = "https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator"
 publish = false
 
 [dependencies]

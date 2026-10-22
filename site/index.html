@@ -10,8 +10,8 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Fltr Fivemleaktr — FiveM RPF editor">
   <meta property="og:description" content="Free and open-source .rpf editor for the FiveM mods folder.">
-  <meta property="og:url" content="https://talkdedsec.github.io/tlk-rpf/">
-  <meta property="og:image" content="https://talkdedsec.github.io/tlk-rpf/ekran/ozet-hazir-ayarlar.png">
+  <meta property="og:url" content="https://kyvex372.github.io/FLTR-Fivem-Rpf-Editor-Creator/">
+  <meta property="og:image" content="https://kyvex372.github.io/FLTR-Fivem-Rpf-Editor-Creator/ekran/ozet-hazir-ayarlar.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="stil.css">
 </head>
@@ -29,7 +29,7 @@
         <a href="#ekranlar"><span class="tr">Ekranlar</span><span class="en">Screenshots</span></a>
         <a href="#guven"><span class="tr">Güven</span><span class="en">Trust</span></a>
         <a href="#sss"><span class="tr">SSS</span><span class="en">FAQ</span></a>
-        <a href="https://github.com/Talkdedsec/tlk-rpf" rel="noopener">Kaynak / Upstream</a>
+        <a href="https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator" rel="noopener">GitHub</a>
       </nav>
       <button class="dil" type="button" id="dil" aria-label="Language / Dil">
         <span class="tr">EN</span><span class="en">TR</span>
@@ -43,19 +43,19 @@
         <div class="giris-metin">
           <p class="rozet"><span class="nokta"></span><span class="tr">Ücretsiz · Açık kaynak · GPL-3.0</span><span class="en">Free · Open source · GPL-3.0</span></p>
           <h1>
-            <span class="tr">FiveM modlarını <em>OpenIV'siz</em> düzenle.</span>
-            <span class="en">Edit FiveM mods <em>without OpenIV</em>.</span>
+            <span class="tr">Mod fikrini <em>FLTR ile</em> pakete dönüştür.</span>
+            <span class="en">Turn your mod idea into a package <em>with FLTR</em>.</span>
           </h1>
           <p class="alt">
-            <span class="tr">Fltr Fivemleaktr, FiveM <code>mods</code> klasöründeki <code>.rpf</code> paketlerini açar; dokuları, görsel ayarları, parçacık efektlerini, modelleri ve haritayı tek pencerede değiştirir. Her kayıttan önce yedek alır, her değişikliği geri alabilirsin.</span>
+            <span class="tr">Sunucuna ait haritayı tasarla, grafik paketinin renklerini ayarla, dokularını yenile. FLTR; dosyalarını incelemekten yeni RPF paketini hazırlamaya kadar mod çalışmalarını aynı masaüstü uygulamasında toplar.</span>
             <span class="en">Fltr Fivemleaktr opens the <code>.rpf</code> packages in your FiveM <code>mods</code> folder and lets you change textures, visual settings, particle effects, models and the map in one window. It backs up before every save and every change can be undone.</span>
           </p>
           <div class="eylem">
-            <a class="dugme birincil" id="indir" href="https://github.com/Talkdedsec/tlk-rpf/releases/latest" rel="noopener">
+            <a class="dugme birincil" id="indir" href="https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/releases" rel="noopener">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
-              <span class="tr">Windows için indir</span><span class="en">Download for Windows</span>
+              <span class="tr">Sürümleri incele</span><span class="en">View releases</span>
             </a>
-            <a class="dugme" href="https://github.com/Talkdedsec/tlk-rpf" rel="noopener">
+            <a class="dugme" href="https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator" rel="noopener">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5"/></svg>
               <span class="tr">Kaynak kod</span><span class="en">Source code</span>
             </a>
@@ -164,7 +164,7 @@
         <div>
           <h2><span class="tr">Üç adımda başla</span><span class="en">Start in three steps</span></h2>
           <ol class="adimlar">
-            <li><span class="tr"><a href="https://github.com/Talkdedsec/tlk-rpf/releases/latest" rel="noopener">Son sürümden</a> kurucuyu indir ve çalıştır. Kurulumsuz <code>tlk-rpf.exe</code> de var.</span><span class="en">Download the installer from the <a href="https://github.com/Talkdedsec/tlk-rpf/releases/latest" rel="noopener">latest release</a> and run it. A portable <code>tlk-rpf.exe</code> is attached too.</span></li>
+            <li><span class="tr">Kaynak kodu indir; <code>npm ci</code> ve <code>npm run tauri dev</code> ile başlat. Gereken araçlar GitHub rehberindedir.</span><span class="en">Download the source; run <code>npm ci</code> and <code>npm run tauri dev</code>. See GitHub for prerequisites.</span></li>
             <li><span class="tr">Uygulama FiveM mods klasörünü kendisi bulur. Soldan bir mod seç.</span><span class="en">The app finds your FiveM mods folder. Pick a mod on the left.</span></li>
             <li><span class="tr">Düzenle, <kbd>Ctrl</kbd>+<kbd>S</kbd> ile kaydet. Kaydetmeden önce FiveM'i kapat.</span><span class="en">Edit and press <kbd>Ctrl</kbd>+<kbd>S</kbd>. Close FiveM before saving.</span></li>
           </ol>
@@ -228,7 +228,7 @@
         </details>
         <details>
           <summary><span class="tr">Bir hata buldum.</span><span class="en">I found a bug.</span></summary>
-          <p><span class="tr"><a href="https://github.com/Talkdedsec/tlk-rpf/issues/new/choose" rel="noopener">GitHub'da sorun aç</a>. Güvenlik açıklarını <a href="https://github.com/Talkdedsec/tlk-rpf/security/advisories/new" rel="noopener">özel olarak bildir</a>.</span><span class="en"><a href="https://github.com/Talkdedsec/tlk-rpf/issues/new/choose" rel="noopener">Open an issue on GitHub</a>. Report security problems <a href="https://github.com/Talkdedsec/tlk-rpf/security/advisories/new" rel="noopener">privately</a>.</span></p>
+          <p><span class="tr"><a href="https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/issues/new/choose" rel="noopener">GitHub'da sorun aç</a>. Güvenlik açıklarını <a href="https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/security/advisories/new" rel="noopener">özel olarak bildir</a>.</span><span class="en"><a href="https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/issues/new/choose" rel="noopener">Open an issue on GitHub</a>. Report security problems <a href="https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/security/advisories/new" rel="noopener">privately</a>.</span></p>
         </details>
       </div>
     </section>
@@ -236,11 +236,10 @@
 
   <footer class="alt-bilgi">
     <div class="kap alt-ic">
-      <p class="soluk">Fltr / Fivemleaktr · Based on tlk-rpf by Talkdedsec · GPL-3.0-only. İndirme bağlantıları kaynak sürüme gider / Download links point to upstream releases.</p>
       <div class="logo kucuk-logo"><img src="ikon.svg" alt="" width="22" height="22"><span>Fltr Fivemleaktr</span></div>
-      <p><span class="tr">© 2026 Talkdedsec · GPL-3.0 lisanslı özgür yazılım.</span><span class="en">© 2026 Talkdedsec · Free software under GPL-3.0.</span>
-        <a href="https://github.com/Talkdedsec/tlk-rpf" rel="noopener">Kaynak / Upstream</a> ·
-        <a href="https://github.com/Talkdedsec/tlk-rpf/blob/main/CHANGELOG.md" rel="noopener"><span class="tr">Değişiklikler</span><span class="en">Changelog</span></a></p>
+      <p><span class="tr">FLTR / Fivemleaktr · GPL-3.0-only.</span><span class="en">FLTR / Fivemleaktr · GPL-3.0-only.</span>
+        <a href="https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/blob/main/NOTICE.md" rel="noopener">Kaynak ve telif / Attribution</a> ·
+        <a href="https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/blob/main/CHANGELOG.md" rel="noopener"><span class="tr">Değişiklikler</span><span class="en">Changelog</span></a></p>
       <p class="soluk"><span class="tr">Fltr Fivemleaktr'in Rockstar Games, Take-Two Interactive ya da Cfx.re ile bağı yoktur. Grand Theft Auto ve FiveM sahiplerinin ticari markalarıdır.</span><span class="en">Fltr Fivemleaktr is not affiliated with Rockstar Games, Take-Two Interactive or Cfx.re. Grand Theft Auto and FiveM are trademarks of their respective owners.</span></p>
     </div>
   </footer>

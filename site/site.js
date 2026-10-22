@@ -38,7 +38,7 @@
 
   // Son sürümde kurucu varsa doğrudan ona bağla; yoksa sürümler sayfası kalır.
   const boyut = (b) => (b / 1048576).toFixed(1).replace(".", kok.dataset.dil === "tr" ? "," : ".") + " MB";
-  fetch("https://api.github.com/repos/Talkdedsec/tlk-rpf/releases/latest", { headers: { Accept: "application/vnd.github+json" } })
+  fetch("https://api.github.com/repos/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/releases/latest", { headers: { Accept: "application/vnd.github+json" } })
     .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
     .then((s) => {
       const kurucu = (s.assets || []).find((a) => /_x64-setup\.exe$/i.test(a.name));
