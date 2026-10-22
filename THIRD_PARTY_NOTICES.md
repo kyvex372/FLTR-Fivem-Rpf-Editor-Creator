@@ -1,5 +1,9 @@
 # Third-party notices
 
+## Base source attribution
+
+Copyright (c) 2026 Talkdedsec. Base source: [tlk-rpf](https://github.com/Talkdedsec/tlk-rpf), GPL-3.0-only. FLTR / Fivemleaktr modifications are distributed under the same license.
+
 fltr-rpf is built on the components below. Each is used under its own license; the
 license texts are distributed with each package (`Cargo.lock` and `package-lock.json`
 pin the exact versions).

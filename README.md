@@ -118,6 +118,6 @@ Gerçek mod örnekleri kullanan testler için `testdata/` altında kendi `.rpf` 
 
 ---
 
-**FLTR / Fivemleaktr** · [Lisans](LICENSE) · [Kaynak ve telif bildirimleri](NOTICE.md) · [Kullanılan bileşenler](THIRD_PARTY_NOTICES.md)
+**FLTR / Fivemleaktr** · [Lisans](LICENSE) · [Kullanılan bileşenler](THIRD_PARTY_NOTICES.md)
 
 Rockstar Games, Take-Two Interactive veya Cfx.re ile bağlantılı değildir. Grand Theft Auto ve FiveM ilgili sahiplerinin ticari markalarıdır.

@@ -9,4 +9,4 @@
 - Proje tanıtımı ve çalıştırma rehberi bu depoya göre yeniden hazırlandı.
 - Destek, kaynak ve sürüm bağlantıları FLTR deposuna yönlendirildi.
 
-Bu bölüm FLTR uyarlamasını belgeler; indirmeye hazır bir sürüm yayınlandığı anlamına gelmez. Kaynak geçmişi için [bildirimlere](NOTICE.md) bakın.
+Bu bölüm FLTR uyarlamasını belgeler; indirmeye hazır bir sürüm yayınlandığı anlamına gelmez.
