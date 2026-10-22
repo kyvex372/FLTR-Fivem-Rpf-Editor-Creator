@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en" data-dil="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fltr Fivemleaktr — FiveM RPF editor</title>
+  <meta name="description" content="Free and open-source editor for the .rpf packages in your FiveM mods folder: textures, visual settings, particle effects, models and maps. A backup before every save, undo for every change.">
+  <meta name="theme-color" content="#0d0d0f">
+  <link rel="icon" href="ikon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fltr Fivemleaktr — FiveM RPF editor">
+  <meta property="og:description" content="Free and open-source .rpf editor for the FiveM mods folder.">
+  <meta property="og:url" content="https://talkdedsec.github.io/tlk-rpf/">
+  <meta property="og:image" content="https://talkdedsec.github.io/tlk-rpf/ekran/ozet-hazir-ayarlar.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <a class="atla" href="#ana"><span class="tr">İçeriğe geç</span><span class="en">Skip to content</span></a>
+
+  <header class="ust">
+    <div class="kap ust-ic">
+      <a class="logo" href="#" aria-label="Fltr Fivemleaktr">
+        <img src="ikon.svg" alt="" width="30" height="30">
+        <span>Fltr Fivemleaktr</span>
+      </a>
+      <nav class="menu" aria-label="Main menu">
+        <a href="#ozellikler"><span class="tr">Özellikler</span><span class="en">Features</span></a>
+        <a href="#ekranlar"><span class="tr">Ekranlar</span><span class="en">Screenshots</span></a>
+        <a href="#guven"><span class="tr">Güven</span><span class="en">Trust</span></a>
+        <a href="#sss"><span class="tr">SSS</span><span class="en">FAQ</span></a>
+        <a href="https://github.com/Talkdedsec/tlk-rpf" rel="noopener">Kaynak / Upstream</a>
+      </nav>
+      <button class="dil" type="button" id="dil" aria-label="Language / Dil">
+        <span class="tr">EN</span><span class="en">TR</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="ana">
+    <section class="giris">
+      <div class="kap giris-ic">
+        <div class="giris-metin">
+          <p class="rozet"><span class="nokta"></span><span class="tr">Ücretsiz · Açık kaynak · GPL-3.0</span><span class="en">Free · Open source · GPL-3.0</span></p>
+          <h1>
+            <span class="tr">FiveM modlarını <em>OpenIV'siz</em> düzenle.</span>
+            <span class="en">Edit FiveM mods <em>without OpenIV</em>.</span>
+          </h1>
+          <p class="alt">
+            <span class="tr">Fltr Fivemleaktr, FiveM <code>mods</code> klasöründeki <code>.rpf</code> paketlerini açar; dokuları, görsel ayarları, parçacık efektlerini, modelleri ve haritayı tek pencerede değiştirir. Her kayıttan önce yedek alır, her değişikliği geri alabilirsin.</span>
+            <span class="en">Fltr Fivemleaktr opens the <code>.rpf</code> packages in your FiveM <code>mods</code> folder and lets you change textures, visual settings, particle effects, models and the map in one window. It backs up before every save and every change can be undone.</span>
+          </p>
+          <div class="eylem">
+            <a class="dugme birincil" id="indir" href="https://github.com/Talkdedsec/tlk-rpf/releases/latest" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
+              <span class="tr">Windows için indir</span><span class="en">Download for Windows</span>
+            </a>
+            <a class="dugme" href="https://github.com/Talkdedsec/tlk-rpf" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5"/></svg>
+              <span class="tr">Kaynak kod</span><span class="en">Source code</span>
+            </a>
+          </div>
+          <p class="kucuk" id="surum-bilgi">
+            <span class="tr">Windows 10/11 x64 · yönetici izni gerekmez</span><span class="en">Windows 10/11 x64 · no admin rights needed</span>
+          </p>
+        </div>
+        <figure class="giris-gorsel">
+          <button type="button" class="buyut" data-src="ekran/ozet-hazir-ayarlar.png">
+            <img src="ekran/ozet-hazir-ayarlar.png" width="1440" height="900" alt="Fltr Fivemleaktr: overview of a graphics pack with detected presets">
+          </button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="seritler" aria-label="Highlights">
+      <div class="kap serit-ic">
+        <div><strong><span class="tr">Yedek + geri al</span><span class="en">Backup + undo</span></strong><span class="tr">Her kayıt öncesi yedek, dosya başına son 20</span><span class="en">A backup before every save, last 20 per file</span></div>
+        <div><strong><span class="tr">FiveM gibi okur</span><span class="en">Reads like FiveM</span></strong><span class="tr">Yüklenmeyecek modları nedeniyle gösterir</span><span class="en">Flags mods FiveM will ignore, with the reason</span></div>
+        <div><strong><span class="tr">Ölü alanı temizler</span><span class="en">Removes dead space</span></strong><span class="tr">26 MB'lık paket ~1 MB'a iner</span><span class="en">A 26 MB pack shrinks to about 1 MB</span></div>
+        <div><strong><span class="tr">Telemetri yok</span><span class="en">No telemetry</span></strong><span class="tr">AI'ı açmazsan hiçbir şey dışarı çıkmaz</span><span class="en">Nothing leaves your PC unless you enable AI</span></div>
+      </div>
+    </section>
+
+    <section id="ozellikler" class="bolum">
+      <div class="kap">
+        <h2><span class="tr">Ne yapabilirsin</span><span class="en">What you can do</span></h2>
+        <p class="bolum-alt"><span class="tr">Her dosya türü kendi düzenleyicisiyle açılır. Dışa aktar, harici programda düzenle, geri al, yeniden paketle döngüsü yok.</span><span class="en">Every file type opens in its own editor. No export, external editor, import and repack loop.</span></p>
+
+        <div class="ozellik">
+          <div class="ozellik-metin">
+            <h3><span class="tr">Mods yöneticisi ve çakışmalar</span><span class="en">Mods manager and conflicts</span></h3>
+            <p><span class="tr">Modları tek tıkla aç/kapa. Aynı oyun dosyasını değiştiren modları gör, kopyaları karşılaştır (birebir aynı mı, farklı ayar, doku ya da satır) ve birini kapat.</span><span class="en">Toggle mods with one click. See mods that replace the same game file, compare the copies (identical, different settings, textures or lines) and switch one off.</span></p>
+          </div>
+          <button type="button" class="buyut" data-src="ekran/cakisma.png"><img loading="lazy" src="ekran/cakisma.png" width="1440" height="900" alt="Conflict comparison window"></button>
+        </div>
+
+        <div class="ozellik ters">
+          <div class="ozellik-metin">
+            <h3><span class="tr">Parçacık efektleri</span><span class="en">Particle effects</span></h3>
+            <p><span class="tr"><code>.ypt</code> içindeki her efekt, yayıcı ve parçacık kuralı; renk, boyut, ışık ve doğma hızı anahtar kareleriyle. "blood" ara, hepsini tek adımda yeşile boya.</span><span class="en">Every effect, emitter and particle rule in a <code>.ypt</code> with its colour, size, light and spawn-rate keyframes. Search "blood" and tint all of them green in one undoable step.</span></p>
+          </div>
+          <button type="button" class="buyut" data-src="ekran/ypt-efekt-ayarlari.png"><img loading="lazy" src="ekran/ypt-efekt-ayarlari.png" width="1440" height="900" alt="Particle effect editor"></button>
+        </div>
+
+        <div class="ozellik">
+          <div class="ozellik-metin">
+            <h3><span class="tr">Harita ve radar</span><span class="en">Pause map and radar</span></h3>
+            <p><span class="tr">ESC haritasına foto, logo ve yazı koy; oyun koordinatına göre yerleştir, döndür, ölçekle. Haritaya işle, beğenmezsen geri al ve katmanlar geri gelsin.</span><span class="en">Place photos, logos and text on the ESC map by game coordinates, rotate and scale them, bake them into the tiles and undo the bake to get the layers back.</span></p>
+          </div>
+          <button type="button" class="buyut" data-src="ekran/harita-duzenleyici.png"><img loading="lazy" src="ekran/harita-duzenleyici.png" width="1440" height="900" alt="Pause map editor"></button>
+        </div>
+
+        <div class="ozellik ters">
+          <div class="ozellik-metin">
+            <h3><span class="tr">3B görünüm ve dokular</span><span class="en">3D view and textures</span></h3>
+            <p><span class="tr">Modelleri 3B gör, parçaya tıkla, dokusunu değiştir ya da renklendir; sonuç anında görünür. Model ve efekt içine gömülü dokular yerinde düzenlenir ve büyütülebilir. OBJ olarak dışa aktar.</span><span class="en">View models in 3D, click a part to replace or recolour its texture and see it at once. Textures embedded in models and effects are edited in place and can be resized. Export to OBJ.</span></p>
+          </div>
+          <button type="button" class="buyut" data-src="ekran/3b-doku-paneli.png"><img loading="lazy" src="ekran/3b-doku-paneli.png" width="1440" height="900" alt="3D view with texture panel"></button>
+        </div>
+
+        <div class="izgara">
+          <article class="kart">
+            <h3><span class="tr">Dokular</span><span class="en">Textures</span></h3>
+            <p><span class="tr">PNG, JPG, WEBP, TGA, DDS ile değiştir; renklendir, adlandır, ekle, sil, boyutlandır. Klasöre toplu çıkar, aynı adlarla toplu geri al. DXT1/3/5, BC4/5/7.</span><span class="en">Replace from PNG, JPG, WEBP, TGA or DDS; recolour, rename, add, delete, resize. Export a whole dictionary and re-import by name. DXT1/3/5, BC4/5/7.</span></p>
+          </article>
+          <article class="kart">
+            <h3><span class="tr">Görsel ayarlar</span><span class="en">Visual settings</span></h3>
+            <p><span class="tr"><code>visualsettings.dat</code> konulara göre gruplu: hasar ekranı, öldürme efekti, far, şehir ışıkları, gökyüzü. Satır düzeni ve yorumlar korunur.</span><span class="en"><code>visualsettings.dat</code> grouped by topic: damage overlay, kill effect, headlights, city lights, sky. Line order and comments are kept.</span></p>
+          </article>
+          <article class="kart">
+            <h3><span class="tr">Arayüz (.gfx)</span><span class="en">UI files (.gfx)</span></h3>
+            <p><span class="tr">HUD ve minimap dosyalarındaki gömülü görselleri gör, değiştir, PNG al; arayüzün oyundan çektiği dokuları listele.</span><span class="en">View, replace and export the images inside HUD and minimap files, and list the game textures the UI pulls in.</span></p>
+          </article>
+          <article class="kart">
+            <h3><span class="tr">Meta dosyaları</span><span class="en">Meta files</span></h3>
+            <p><span class="tr"><code>.ymt</code>, <code>.ymap</code>, <code>.ytyp</code> XML olarak açılır, düzenleyince ikiliye geri yazılır.</span><span class="en"><code>.ymt</code>, <code>.ymap</code> and <code>.ytyp</code> open as XML and are written back to binary.</span></p>
+          </article>
+          <article class="kart">
+            <h3><span class="tr">Paket onarımı</span><span class="en">Package repair</span></h3>
+            <p><span class="tr">Bozuk <code>assembly.xml</code>'i hoşgörüyle okur, yeniden adlandırılmış dosyaya işaret eden eşlemeyi onarır, ölü satırları temizler.</span><span class="en">Reads malformed <code>assembly.xml</code> files, repairs mappings that point at renamed files and removes dead lines.</span></p>
+          </article>
+          <article class="kart">
+            <h3><span class="tr">AI yardımcı (isteğe bağlı)</span><span class="en">AI assistant (optional)</span></h3>
+            <p><span class="tr">"Kanı yeşil yap", "Legion Meydanı'na sunucu adını yaz" de; aynı araçları kullanır. Claude, OpenAI, Gemini, Groq, OpenRouter, Ollama ya da kendi adresin.</span><span class="en">Say "make the blood green" or "write the server name on Legion Square" and it uses the same tools. Claude, OpenAI, Gemini, Groq, OpenRouter, Ollama or your own endpoint.</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ekranlar" class="bolum koyu">
+      <div class="kap">
+        <h2><span class="tr">Ekranlar</span><span class="en">Screenshots</span></h2>
+        <div class="galeri">
+          <button type="button" class="buyut" data-src="ekran/model-galerisi.png"><img loading="lazy" src="ekran/model-galerisi.png" width="1440" height="900" alt="Model gallery"><span><span class="tr">Model galerisi ve paket onarımı</span><span class="en">Model gallery and package repair</span></span></button>
+          <button type="button" class="buyut" data-src="ekran/gfx-arayuz.png"><img loading="lazy" src="ekran/gfx-arayuz.png" width="1440" height="900" alt="Scaleform UI images"><span><span class="tr">Scaleform arayüz görselleri</span><span class="en">Scaleform UI images</span></span></button>
+          <button type="button" class="buyut" data-src="ekran/carpisma-ybn.png"><img loading="lazy" src="ekran/carpisma-ybn.png" width="1440" height="900" alt="Collision mesh"><span><span class="tr">Çarpışma modeli, malzeme renkli</span><span class="en">Collision mesh by material</span></span></button>
+          <button type="button" class="buyut" data-src="ekran/ozet-hazir-ayarlar.png"><img loading="lazy" src="ekran/ozet-hazir-ayarlar.png" width="1440" height="900" alt="Overview and presets"><span><span class="tr">Özet: sorunlar ve hazır ayarlar</span><span class="en">Overview: problems and presets</span></span></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="kurulum" class="bolum">
+      <div class="kap iki">
+        <div>
+          <h2><span class="tr">Üç adımda başla</span><span class="en">Start in three steps</span></h2>
+          <ol class="adimlar">
+            <li><span class="tr"><a href="https://github.com/Talkdedsec/tlk-rpf/releases/latest" rel="noopener">Son sürümden</a> kurucuyu indir ve çalıştır. Kurulumsuz <code>tlk-rpf.exe</code> de var.</span><span class="en">Download the installer from the <a href="https://github.com/Talkdedsec/tlk-rpf/releases/latest" rel="noopener">latest release</a> and run it. A portable <code>tlk-rpf.exe</code> is attached too.</span></li>
+            <li><span class="tr">Uygulama FiveM mods klasörünü kendisi bulur. Soldan bir mod seç.</span><span class="en">The app finds your FiveM mods folder. Pick a mod on the left.</span></li>
+            <li><span class="tr">Düzenle, <kbd>Ctrl</kbd>+<kbd>S</kbd> ile kaydet. Kaydetmeden önce FiveM'i kapat.</span><span class="en">Edit and press <kbd>Ctrl</kbd>+<kbd>S</kbd>. Close FiveM before saving.</span></li>
+          </ol>
+        </div>
+        <div class="tablo-kap">
+          <table>
+            <caption><span class="tr">Neyi yapar, neyi yapmaz</span><span class="en">What it does and does not do</span></caption>
+            <thead><tr><th><span class="tr">Yapar</span><span class="en">Does</span></th><th><span class="tr">Yapmaz</span><span class="en">Does not</span></th></tr></thead>
+            <tbody>
+              <tr><td><span class="tr">OPEN ve CFXP arşivleri (FiveM'in kabul ettikleri)</span><span class="en">OPEN and CFXP archives (what FiveM accepts)</span></td><td><span class="tr">NG/AES şifreli arşivler</span><span class="en">NG/AES encrypted archives</span></td></tr>
+              <tr><td><span class="tr">Doku, ayar, efekt, harita, arayüz düzenleme</span><span class="en">Textures, settings, effects, map, UI</span></td><td><span class="tr">Sıfırdan 3B model yapma</span><span class="en">Authoring new 3D models</span></td></tr>
+              <tr><td><span class="tr">Kayıt öncesi yedek, FiveM açıkken yazmayı reddetme</span><span class="en">Backup before writing, refuses while FiveM has the file open</span></td><td><span class="tr">Oyunun ya da FiveM'in kendisini değiştirme</span><span class="en">Changing the game or FiveM itself</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="guven" class="bolum koyu">
+      <div class="kap">
+        <h2><span class="tr">Güven ve gizlilik</span><span class="en">Trust and privacy</span></h2>
+        <div class="izgara">
+          <article class="kart">
+            <h3><span class="tr">Ağ</span><span class="en">Network</span></h3>
+            <p><span class="tr">Telemetri ve güncelleme denetimi yok. AI sağlayıcısı ayarlarsan yalnız isteğin ve yardımcının okuduğu dosya parçaları o sağlayıcıya gider.</span><span class="en">No telemetry, no update check. If you set up an AI provider, only your request and the file excerpts the assistant reads go to it.</span></p>
+          </article>
+          <article class="kart">
+            <h3><span class="tr">Yazma</span><span class="en">Writes</span></h3>
+            <p><span class="tr">Her kayıt geçici dosyaya yazılır, arşiv olarak yeniden okunup doğrulanır, asıl dosya yedeklenir, sonra atomik olarak yer değiştirir.</span><span class="en">Every save goes to a temporary file, is re-read and verified, the original is backed up, then it is swapped in atomically.</span></p>
+          </article>
+          <article class="kart">
+            <h3><span class="tr">Anahtarlar</span><span class="en">Keys</span></h3>
+            <p><span class="tr">AI anahtarları ayar dosyasında değil, Windows Kimlik Bilgisi Yöneticisi'nde durur.</span><span class="en">AI keys are kept in Windows Credential Manager, not in the settings file.</span></p>
+          </article>
+          <article class="kart">
+            <h3><span class="tr">Açık kaynak</span><span class="en">Open source</span></h3>
+            <p><span class="tr">Kaynağın tamamı GitHub'da, GPL-3.0 lisanslı. Her sürüm GitHub'da derlenir, yanında SHA256 özetleri yayımlanır.</span><span class="en">The full source is on GitHub under GPL-3.0. Each release is built on GitHub and published with SHA256 checksums.</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sss" class="bolum">
+      <div class="kap dar">
+        <h2><span class="tr">Sık sorulanlar</span><span class="en">FAQ</span></h2>
+        <details>
+          <summary><span class="tr">Windows SmartScreen uyarı veriyor, neden?</span><span class="en">Why does Windows SmartScreen warn me?</span></summary>
+          <p><span class="tr">Dosya kod imzalı değil. İndirdiğin dosyayı sürümdeki <code>SHA256SUMS.txt</code> ile karşılaştırabilir, istersen kaynaktan kendin derleyebilirsin.</span><span class="en">The binary is not code-signed. Compare the download with <code>SHA256SUMS.txt</code> from the release, or build it yourself from source.</span></p>
+        </details>
+        <details>
+          <summary><span class="tr">Arayüz İngilizce mi?</span><span class="en">Is the interface in English?</span></summary>
+          <p><span class="tr">Arayüz şimdilik yalnız Türkçe.</span><span class="en">Not yet: the interface is Turkish only for now.</span></p>
+        </details>
+        <details>
+          <summary><span class="tr">Silah sesi modlarını açabiliyor mu?</span><span class="en">Can it open weapon sound mods?</span></summary>
+          <p><span class="tr">NG şifreli iç arşiv taşıyan ses paketleri açılmaz; <code>.awc</code> ses dosyaları da henüz çözülmüyor.</span><span class="en">Sound packs with NG-encrypted inner archives cannot be opened, and <code>.awc</code> audio is not decoded yet.</span></p>
+        </details>
+        <details>
+          <summary><span class="tr">Değişikliğim oyunda kesin çalışır mı?</span><span class="en">Will my change definitely work in game?</span></summary>
+          <p><span class="tr">Fltr Fivemleaktr paketi FiveM'in okuduğu gibi denetler ve dosyayı bağımsız bir ayrıştırıcıyla doğrular, ama sonucu oyunda denemen gerekir.</span><span class="en">Fltr Fivemleaktr checks the package the way FiveM reads it and verifies the file with an independent parser, but test the result in game.</span></p>
+        </details>
+        <details>
+          <summary><span class="tr">Bir hata buldum.</span><span class="en">I found a bug.</span></summary>
+          <p><span class="tr"><a href="https://github.com/Talkdedsec/tlk-rpf/issues/new/choose" rel="noopener">GitHub'da sorun aç</a>. Güvenlik açıklarını <a href="https://github.com/Talkdedsec/tlk-rpf/security/advisories/new" rel="noopener">özel olarak bildir</a>.</span><span class="en"><a href="https://github.com/Talkdedsec/tlk-rpf/issues/new/choose" rel="noopener">Open an issue on GitHub</a>. Report security problems <a href="https://github.com/Talkdedsec/tlk-rpf/security/advisories/new" rel="noopener">privately</a>.</span></p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="alt-bilgi">
+    <div class="kap alt-ic">
+      <p class="soluk">Fltr / Fivemleaktr · Based on tlk-rpf by Talkdedsec · GPL-3.0-only. İndirme bağlantıları kaynak sürüme gider / Download links point to upstream releases.</p>
+      <div class="logo kucuk-logo"><img src="ikon.svg" alt="" width="22" height="22"><span>Fltr Fivemleaktr</span></div>
+      <p><span class="tr">© 2026 Talkdedsec · GPL-3.0 lisanslı özgür yazılım.</span><span class="en">© 2026 Talkdedsec · Free software under GPL-3.0.</span>
+        <a href="https://github.com/Talkdedsec/tlk-rpf" rel="noopener">Kaynak / Upstream</a> ·
+        <a href="https://github.com/Talkdedsec/tlk-rpf/blob/main/CHANGELOG.md" rel="noopener"><span class="tr">Değişiklikler</span><span class="en">Changelog</span></a></p>
+      <p class="soluk"><span class="tr">Fltr Fivemleaktr'in Rockstar Games, Take-Two Interactive ya da Cfx.re ile bağı yoktur. Grand Theft Auto ve FiveM sahiplerinin ticari markalarıdır.</span><span class="en">Fltr Fivemleaktr is not affiliated with Rockstar Games, Take-Two Interactive or Cfx.re. Grand Theft Auto and FiveM are trademarks of their respective owners.</span></p>
+    </div>
+  </footer>
+
+  <dialog id="buyuk" aria-label="Screenshot">
+    <form method="dialog"><button class="kapat" aria-label="Close">×</button></form>
+    <img alt="">
+  </dialog>
+
+  <script src="site.js"></script>
+</body>
+</html>

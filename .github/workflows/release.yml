@@ -1,0 +1,83 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Tag to build (for example v1.2.1)
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    name: Windows x64
+    runs-on: windows-latest
+    timeout-minutes: 60
+    env:
+      TAG: ${{ github.event.inputs.tag || github.ref_name }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ env.TAG }}
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test
+        run: cargo test -p fltr-rpf-core --locked
+
+      - name: Build
+        run: npx tauri build
+
+      - name: Collect files
+        shell: pwsh
+        run: |
+          $version = (Get-Content src-tauri/tauri.conf.json | ConvertFrom-Json).version
+          New-Item -ItemType Directory -Force out | Out-Null
+          Copy-Item "target/release/bundle/nsis/*.exe" out/
+          Copy-Item "target/release/fltr-rpf.exe" "out/fltr-rpf.exe"
+          Push-Location out
+          $lines = Get-ChildItem -File | ForEach-Object {
+            "{0}  {1}" -f (Get-FileHash $_.Name -Algorithm SHA256).Hash.ToLower(), $_.Name
+          }
+          # LF line endings so `sha256sum -c` works on Linux and WSL as well
+          [IO.File]::WriteAllText("$PWD/SHA256SUMS.txt", (($lines -join "`n") + "`n"))
+          Pop-Location
+          "VERSION=$version" >> $env:GITHUB_ENV
+
+      - name: Publish release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # The release notes are this version's section of CHANGELOG.md
+          $lines = Get-Content CHANGELOG.md
+          $start = ($lines | Select-String -SimpleMatch "## [$env:VERSION]" | Select-Object -First 1).LineNumber
+          $section = @()
+          if ($start) {
+            foreach ($l in $lines[$start..($lines.Count - 1)]) {
+              if ($l -match '^## \[') { break }
+              $section += $l
+            }
+          }
+          $notes = ($section -join "`n").Trim()
+          $notes += "`n`n**Installer:** ``Fltr Fivemleaktr_$($env:VERSION)_x64-setup.exe`` · **Portable:** ``fltr-rpf.exe`` · **Checksums:** ``SHA256SUMS.txt``"
+          [IO.File]::WriteAllText("$PWD/notes.md", $notes + "`n")
+          gh release view $env:TAG *> $null
+          if ($LASTEXITCODE -ne 0) {
+            gh release create $env:TAG --title "Fltr Fivemleaktr $env:VERSION" --notes-file notes.md --verify-tag
+          }
+          gh release upload $env:TAG (Get-ChildItem out -File).FullName --clobber

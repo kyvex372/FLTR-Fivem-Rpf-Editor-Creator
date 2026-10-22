@@ -1,0 +1,13 @@
+[workspace]
+resolver = "3"
+members = ["core", "src-tauri"]
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
+# beklenmedik bir ayrıştırma hatası uygulamayı (ve kaydedilmemiş işi) götürmesin; async komutlarda panik yalnız o isteği düşürür
+panic = "unwind"
+
+[profile.dev.package."*"]
+opt-level = 3

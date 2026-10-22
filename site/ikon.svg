@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>Fltr Fivemleaktr</title>
+  <rect width="512" height="512" rx="112" fill="#121214"/>
+  <rect x="16" y="16" width="480" height="480" rx="100" fill="none" stroke="#2a2a2f" stroke-width="8"/>
+  <path d="M144 112H384L360 176H216V224H336L312 288H216V400H144Z" fill="#e5243b"/>
+  <path d="M252 336H320V400H228Z" fill="#ff6b7a"/>
+  <path d="M336 336H400L376 400H336Z" fill="#e5243b"/>
+</svg>
