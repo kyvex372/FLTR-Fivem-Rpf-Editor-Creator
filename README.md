@@ -12,7 +12,7 @@
 ![Windows](https://img.shields.io/badge/Windows-10%20%2F%2011-18181B?logo=windows)
 [![GPL](https://img.shields.io/badge/Lisans-GPL--3.0--only-E5243B)](LICENSE)
 
-[Projeyi indir](https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/archive/refs/heads/main.zip) · [Sürümler](https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/releases) · [Destek](https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/issues)
+[Projeyi indir](https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/archive/refs/heads/main.zip) · [Sürümler](https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/releases) · [Destek](https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/issues) · [Discord](https://discord.gg/fivemleaktr)
 
 </div>
 
