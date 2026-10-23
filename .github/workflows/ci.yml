@@ -46,6 +46,6 @@ jobs:
       - name: Clippy
         run: cargo clippy --workspace --all-targets --locked -- -D warnings
 
-      - name: Core tests
+      - name: Workspace tests
         # Tests that need real mod files skip, because testdata/ is empty in the repository.
-        run: cargo test -p fltr-rpf-core --locked
+        run: cargo test --workspace --locked
