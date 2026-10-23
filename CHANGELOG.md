@@ -1,6 +1,10 @@
 # FLTR değişiklikleri
 
-## 1.2.0 — FLTR marka uyarlaması
+## 1.2.0 — FLTR Windows sürümü
+
+- Dışa aktarmada klasör dışına çıkan dosya adları ve mevcut hedeflerin üzerine yazılması engellendi.
+- Hata ve öneri formları Türkçeleştirildi; özel güvenlik bildirimleri etkinleştirildi.
+- GitHub Pages dağıtımı yalnızca elle başlatılacak şekilde düzenlendi.
 
 - Uygulama adı ve pencere başlığı Fltr Fivemleaktr olarak güncellendi.
 - FLTR logosu ve platform simgeleri eklendi.
@@ -9,4 +13,4 @@
 - Proje tanıtımı ve çalıştırma rehberi bu depoya göre yeniden hazırlandı.
 - Destek, kaynak ve sürüm bağlantıları FLTR deposuna yönlendirildi.
 
-Bu bölüm FLTR uyarlamasını belgeler; indirmeye hazır bir sürüm yayınlandığı anlamına gelmez.
+Windows paketleri ve SHA-256 doğrulama dosyası GitHub Releases üzerinden dağıtılır.

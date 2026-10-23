@@ -8,8 +8,8 @@ Güvenlik açığının ayrıntılarını ve örnek saldırı dosyalarını herk
 
 Bildirime kullanılan sürümü, sorunu tetikleyen işlemleri ve beklenen/gerçekleşen davranışı ekleyin. API anahtarı ve kişisel veri göndermeyin.
 
-## Bilinen sınırlama
+## Dışa aktarma koruması
 
-Dışa aktarma yollarının doğrulanmasında bilinen eksikler vardır. Bu sorun giderilene kadar güvenilmeyen RPF dosyalarını dışa aktarmayın.
+Arşiv, toplu doku ve OBJ dışa aktarımında dosya adları doğrulanır. Klasör ayırıcıları, üst dizin yolları, Windows aygıt adları ve mevcut hedefler reddedilir. Bu kontroller tüm ayrıştırıcıların güvenli olduğuna dair garanti değildir.
 
 Oyun içinde yanlış görünen bir doku gibi güvenlik dışı hatalar için [Issues](https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/issues) kullanılabilir.

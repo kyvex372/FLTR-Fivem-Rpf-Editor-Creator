@@ -1,3 +1,4 @@
+mod export_path;
 mod kasa;
 
 use std::collections::HashMap;
@@ -763,14 +764,14 @@ async fn dosya_degistir(durum: State<'_, Durum>, id: u32, yol: String, kaynak: S
 }
 
 fn dugum_yaz(d: &Dugum, hedef: &Path) -> Cevap<usize> {
-    let yol = hedef.join(d.ad());
+    let yol = export_path::child(hedef, d.ad())?;
     match d {
         Dugum::Dosya(f) => {
-            fs::write(&yol, f.veri().map_err(m)?).map_err(|e| format!("{}: {e}", yol.display()))?;
+            export_path::write(&yol, f.veri().map_err(m)?).map_err(|e| format!("{}: {e}", yol.display()))?;
             Ok(1)
         }
         Dugum::Arsiv(a) => {
-            fs::write(&yol, a.arsiv.yaz().map_err(m)?).map_err(|e| format!("{}: {e}", yol.display()))?;
+            export_path::write(&yol, a.arsiv.yaz().map_err(m)?).map_err(|e| format!("{}: {e}", yol.display()))?;
             Ok(1)
         }
         Dugum::Dizin(alt) => {
@@ -1204,7 +1205,7 @@ async fn doku_toplu_disa(durum: State<'_, Durum>, id: u32, yol: String, klasor: 
         };
         let Ok(veri) = veri else { continue };
         let ad: String = d.ad.chars().map(|c| if r#"<>:"/\|?*"#.contains(c) { '_' } else { c }).collect();
-        fs::write(hedef.join(format!("{ad}.{}", if dds { "dds" } else { "png" })), veri).map_err(m)?;
+        export_path::write(export_path::child(hedef, &format!("{ad}.{}", if dds { "dds" } else { "png" }))?, veri).map_err(m)?;
         n += 1;
     }
     Ok(n)
@@ -1837,16 +1838,16 @@ async fn model_obj(durum: State<'_, Durum>, id: u32, yol: String, klasor: String
     let c = model::obj_yaz(&dosya.veri().map_err(m)?, &uzanti.to_lowercase(), ad).map_err(m)?;
     let hedef = Path::new(&klasor);
     fs::create_dir_all(hedef).map_err(m)?;
-    let obj = hedef.join(format!("{ad}.obj"));
-    fs::write(&obj, &c.obj).map_err(m)?;
-    fs::write(hedef.join(format!("{ad}.mtl")), &c.mtl).map_err(m)?;
+    let obj = export_path::child(hedef, &format!("{ad}.obj"))?;
+    export_path::write(&obj, &c.obj).map_err(m)?;
+    export_path::write(export_path::child(hedef, &format!("{ad}.mtl"))?, &c.mtl).map_err(m)?;
     let mut doku = 0;
     let mut eksik = Vec::new();
     for t in &c.dokular {
         let rgba = model_dokusunu_bul(&kap, &yol, t).and_then(|(kaynak, i)| ytd_al(&kap, &kaynak).ok()?.rgba(i, 0).ok());
         match rgba {
             Some((v, w, h)) => {
-                fs::write(hedef.join(format!("{t}.png")), doku::png(&v, w, h).map_err(m)?).map_err(m)?;
+                export_path::write(export_path::child(hedef, &format!("{t}.png"))?, doku::png(&v, w, h).map_err(m)?).map_err(m)?;
                 doku += 1;
             }
             None => eksik.push(t.clone()),

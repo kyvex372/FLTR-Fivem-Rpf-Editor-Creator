@@ -54,7 +54,7 @@ Yeni RPF oluştur, dosyalarını ekle ve `assembly.xml` üzerinden oyun yolu eş
 
 ## Hemen başla
 
-**Şu an kaynak koddan çalıştırılır.** Hazır FLTR kurulum dosyası yayınlandığında [Sürümler](https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/releases) bölümünde bulunur. ZIP indirmek uygulamayı tek başına çalıştırmaz.
+Windows kurulum dosyasını veya taşınabilir EXE dosyasını [Sürümler](https://github.com/kyvex372/FLTR-Fivem-Rpf-Editor-Creator/releases) bölümünden indirebilirsin. Kaynak kod ZIP dosyası çalıştırılabilir uygulama değildir. Aşağıdaki araçlar yalnızca kaynak koddan derlemek isteyenler içindir.
 
 Windows 10/11 x64 üzerinde şu araçlar gerekir:
 
@@ -111,7 +111,7 @@ AI kullanırken mesajların ve yardımcının okuduğu mod içeriği seçtiğin 
 - Paket oluşturmak desteklenir; sıfırdan 3B model üretimi, mesh içe aktarma ve `.awc` ses düzenleme desteklenmez.
 - Modellerdeki ve efektlerdeki gömülü dokular değiştirilebilir; bu sözlüklere doku ekleme/silme desteklenmez.
 - Büyük paketler yüksek RAM kullanabilir. Dosyanın kaydedilmesi, oyun içindeki görünümün doğrulandığı anlamına gelmez.
-- Güvenilmeyen RPF dosyalarını dışa aktarma: dışa aktarma yollarının doğrulanmasında bilinen eksikler vardır.
+- Dışa aktarmada klasör dışına çıkan yollar ve ayrılmış dosya adları reddedilir. Mevcut dosyaların üzerine yazılmaz; boş bir hedef klasör kullan.
 
 ## Geliştiriciler için
 

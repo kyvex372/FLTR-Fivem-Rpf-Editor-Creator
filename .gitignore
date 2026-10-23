@@ -7,3 +7,11 @@ src-tauri/gen/
 testdata/*.rpf
 target-yeni/
 cikti/
+
+# Local credentials and private inputs
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+ayarlar.json

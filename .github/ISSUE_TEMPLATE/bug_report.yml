@@ -1,51 +1,26 @@
-name: Bug report
-description: Something does not work, crashes or gives a wrong result.
+name: Hata bildir
+description: FLTR uygulamasında karşılaştığın bir sorunu bildir.
+title: "[Hata] "
 labels: [bug]
 body:
   - type: markdown
     attributes:
-      value: Write in English or Turkish. / İngilizce ya da Türkçe yazabilirsin.
+      value: "Burası herkese açıktır. API anahtarı, kişisel dosya ve özel sunucu bilgisi paylaşma. Güvenlik açıklarını Security bölümünden özel bildir."
   - type: input
     id: version
     attributes:
-      label: Version
-      description: The version in the installer name or in the About box.
-      placeholder: "1.2.0"
-    validations:
-      required: true
-  - type: textarea
-    id: what-happened
-    attributes:
-      label: What happened
-      description: What did you do, what did you expect and what happened instead?
+      label: Uygulama sürümü ve Windows sürümü
     validations:
       required: true
   - type: textarea
     id: steps
     attributes:
-      label: Steps to reproduce
-      placeholder: |
-        1. Open my-graphics-pack.rpf
-        2. graphics.ytd > dmg_overlay_fade
-        3. Replace with image…
-    validations:
-      required: true
-  - type: input
-    id: file
-    attributes:
-      label: Mod or file involved
-      description: If you can, the mod's name and where it came from. Do not upload someone else's mod here.
-  - type: dropdown
-    id: where
-    attributes:
-      label: Where does the problem show up?
-      options:
-        - Inside fltr-rpf
-        - In game, in FiveM
-        - Both
+      label: Sorunu nasıl oluşturabiliriz?
+      description: Yaptığın işlemi, beklenen sonucu ve gerçekleşen sonucu yaz.
     validations:
       required: true
   - type: textarea
-    id: extra
+    id: error
     attributes:
-      label: Screenshot or error text
+      label: Hata mesajı veya ekran görüntüsü
+      description: Kişisel yolları ve gizli bilgileri paylaşmadan önce kaldır.

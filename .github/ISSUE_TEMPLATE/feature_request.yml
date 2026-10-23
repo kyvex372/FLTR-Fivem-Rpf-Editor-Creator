@@ -1,24 +1,11 @@
-name: Feature request
-description: A new file type, editor or convenience.
-labels: [enhancement]
+name: Özellik öner
+description: FLTR için geliştirme önerisi paylaş.
+title: "[Öneri] "
 body:
-  - type: markdown
-    attributes:
-      value: Write in English or Turkish. / İngilizce ya da Türkçe yazabilirsin.
   - type: textarea
-    id: need
+    id: proposal
     attributes:
-      label: What do you want to do?
-      description: Describe the result you are after, not the tool. Example - "change the colour of the muzzle flash".
+      label: Önerin hangi ihtiyacı karşılıyor?
+      description: Kullanım örneğini ve beklediğin davranışı anlat. Gizli bilgi paylaşma.
     validations:
       required: true
-  - type: textarea
-    id: today
-    attributes:
-      label: How do you do it today?
-      description: With OpenIV, CodeWalker or by hand, and which steps?
-  - type: input
-    id: example
-    attributes:
-      label: Example mod or file type
-      placeholder: ".awc, timecycle_mods_1.xml, weapons.meta…"
